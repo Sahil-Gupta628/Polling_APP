@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="card text-center rounded-0">
+    <div class="card-body">
+        <h1 class="mb-3 pb-3 border-bottom border-dark">
+            Welcome to the Polling App,
+        </h1>
+        <h2 class="text-center mb-4">
+            <span class="d-block">{{ request.user.first_name }} {{ request.user.last_name }}</span>
+        </h2>
+
+        <p class="pb-3">
+            Make your voice heard! Cast your vote on various topics and see live results instantly.
+            Whether it's for fun or serious decision-making, join the conversation and let your opinion count!
+        </p>
+        <hr />
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                <a class="btn btn-info btn-block rounded-pill btn-lg" href="{% url 'polls:index' %}">
+                    Explore Questions for Polling
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
